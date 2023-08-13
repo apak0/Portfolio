@@ -1,11 +1,12 @@
 import React from 'react'
-import Logo from "../../../assets/images/profilePhoto-2.png"
+import PhotoOfMami from "../../../assets/images/profilePhoto-4.png"
 import "./style.css"
+import {  Image } from "@chakra-ui/react";
 
 function HomePage() {
   return (
-    <div>
-       <img src={Logo} className='profilePhoto' />
+    <div id='homepage' className='text-center flex justify-center  bg- '>
+       <Image src={PhotoOfMami} />
     </div>
   )
 }
