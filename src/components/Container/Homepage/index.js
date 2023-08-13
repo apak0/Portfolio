@@ -7,9 +7,9 @@ import { Box, Text } from "@chakra-ui/react";
 function HomePage() {
   return (
     <div id="homepage" className="text-center flex justify-center h-screen ">
-      <Box>
+      <Box className="flex">
         <Image src={PhotoOfMami} className="h-screen" />
-        <Box className="  ">
+        <Box className="absolute  self-end ml-10 mb-36">
         <Text className="text-3xl text-white text-opacity-80 ">Hello, I'm</Text>
         <Text
           id="name-surname"
@@ -17,7 +17,7 @@ function HomePage() {
         >
           Muhammed Apak
         </Text>
-        <Text className="text-lg text-white text-opacity-80 ">
+        <Text className="text-m text-white text-opacity-80 mt-10">
           AND THIS IS MY RESUME
         </Text>
       </Box>
