@@ -1,14 +1,30 @@
-import React from 'react'
-import PhotoOfMami from "../../../assets/images/profilePhoto-4.png"
-import "./style.css"
-import {  Image } from "@chakra-ui/react";
+import React from "react";
+import PhotoOfMami from "../../../assets/images/profilePhoto-4.png";
+import "./style.css";
+import { Image } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 function HomePage() {
   return (
-    <div id='homepage' className='text-center flex justify-center  bg- '>
-       <Image src={PhotoOfMami} />
+    <div id="homepage" className="text-center flex justify-center h-screen ">
+      <Box>
+        <Image src={PhotoOfMami} className="h-screen" />
+        <Box className="  ">
+        <Text className="text-3xl text-white text-opacity-80 ">Hello, I'm</Text>
+        <Text
+          id="name-surname"
+          className="text-5xl font-extrabold  text-white tracking-widest "
+        >
+          Muhammed Apak
+        </Text>
+        <Text className="text-lg text-white text-opacity-80 ">
+          AND THIS IS MY RESUME
+        </Text>
+      </Box>
+      </Box>
+      
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
