@@ -5,15 +5,18 @@ import { FaEnvelope, FaGithub, FaInstagram } from 'react-icons/fa';
 const Contact = () => {
   return (
     <Box
-      bgGradient="linear(to-r, teal.500, blue.500)"
+      bg="#262626"
       color="white"
       py="20"
       textAlign="center"
       className='h-screen flex items-center'
     >
-      <Container maxW="xl">
-        <Heading as="h2" size="xl" mb="4">
+      <Container maxW="xl" bgGradient="linear(to-r, teal.500, blue.500)" bgClip={"text"}>
+        <Heading  as="h2" size="xl" mb="4"  >
+          <Text >
+
           Contact Me
+          </Text>
         </Heading>
         <Flex justifyContent="center" mb="4">
           <Link href="mailto:example@example.com" isExternal mx="2">
