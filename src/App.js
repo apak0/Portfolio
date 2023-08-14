@@ -3,14 +3,19 @@ import Navbar from "./components/Navbar";
 import HomePage from "./components/Container/Homepage";
 import AboutMe from "./components/Container/AboutMe";
 import Projects from "./components/Container/Projects";
+import Contact from "./components/Container/Contact";
+import { Element } from "react-scroll";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <HomePage />
-      <Projects />
-      <AboutMe />
+      <Element name="homepage"><HomePage /></Element>
+      <Element name="projects"><Projects /></Element>
+      <Element name="aboutme"><AboutMe /></Element>
+      <Element name="contact"><Contact /></Element>
+      
+      
     </div>
 
     // <Router> {/* Router bileşenini ekledik */}
