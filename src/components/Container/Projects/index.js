@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text, Grid, GridItem, Image } from '@chakra-ui/react';
-import Bernie from "../../../assets/images/project-1.png"
+
 
 
 const ProjectCard = ({ imageSrc, title, description, technologies }) => {

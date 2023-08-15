@@ -10,22 +10,19 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Element name="homepage"><HomePage /></Element>
-      <Element name="projects"><Projects /></Element>
-      <Element name="aboutme"><AboutMe /></Element>
-      <Element name="contact"><Contact /></Element>
-      
-      
+      <Element name="homepage">
+        <HomePage />
+      </Element>
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="aboutme">
+        <AboutMe />
+      </Element>
+      <Element name="contact">
+        <Contact />
+      </Element>
     </div>
-
-    // <Router> {/* Router bileşenini ekledik */}
-    //   <Navbar  />
-    //   <Routes> {/* Routes bileşenini ekledik */}
-    //     <Route path="/" element={<HomePage/>}/> {/* Homepage bileşenini burada düzgünce yönlendirdik */}
-    //     <Route path="/aboutme" element={<AboutMe/>}/> {/* Homepage bileşenini burada düzgünce yönlendirdik */}
-    //     <Route path="/projects" element={<Projects/>}/> {/* Homepage bileşenini burada düzgünce yönlendirdik */}
-    //   </Routes>
-    // </Router>
   );
 }
 
