@@ -8,15 +8,15 @@ function HomePage() {
   return (
     
     <div id="homepage" className="text-center flex justify-center h-screen ">
-      <Box className="flex relative">
+      <Box className="flex relative ">
         <Image src={PhotoOfMami} className="h-screen" />
-        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center mt-20 ml-5">
           <Text className="text-3xl text-white text-opacity-80 ">
             Hello, I'm
           </Text>
           <Text
             id="name-surname"
-            className="text-5xl font-extrabold  text-white tracking-widest "
+            className="text-5xl font-extrabold  text-white tracking-widest opacity-60 "
           >
             Muhammed Apak
           </Text>
