@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Grid, GridItem, Image } from '@chakra-ui/react';
+import { Box, Text, Grid, GridItem, Image, AspectRatio } from '@chakra-ui/react';
 import project1 from "../../../assets/images/project-1.png"
 import project2 from "../../../assets/images/project-2.png"
 import project3 from "../../../assets/images/project-3.png"
@@ -9,21 +9,21 @@ import project3 from "../../../assets/images/project-3.png"
 
 const ProjectCard = ({ imageSrc, title, description, technologies }) => {
   return (
-    <Box borderWidth="1px"   overflow="hidden" border={"none"}  textColor={"white"}  bg={"#F6F4EB"} py={2} px={2}   >
-      <Image src={imageSrc} alt={title} loading="lazy"
-              maxW={"100%"}
-              h={"200px"}
-              objectFit={"contain"}
-  />
-      <Text fontSize="xl" mt={2} textColor={"#EAC696"} >
-        {title}
-      </Text>
-      <Text mt={2} textColor={"#C8AE7D"} >{description}</Text>
-      <Text mt={4} textColor={"#765827"} fontWeight="bold">
-        Technologies:
-      </Text>
-      <Text>{technologies.join(', ')}</Text>
-    </Box>
+    <Box borderWidth="1px" overflow="hidden" border="none" textColor="white" bg="#F6F4EB" py={2} px={2}>
+    <AspectRatio ratio={4 / 3}>
+      <Image src={imageSrc} alt={title} loading="lazy" objectFit="cover" />
+    </AspectRatio>
+    <Text fontSize="xl" mt={2} textColor="#EAC696">
+      {title}
+    </Text>
+    <Text mt={2} textColor="#C8AE7D">
+      {description}
+    </Text>
+    <Text mt={4} textColor="#765827" fontWeight="bold">
+      Technologies:
+    </Text>
+    <Text>{technologies.join(', ')}</Text>
+  </Box>
   );
 };
 
