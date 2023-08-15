@@ -6,7 +6,7 @@ import project3 from "../../../assets/images/project-3.png"
 
 const ProjectCard = ({ imageSrc, title, description, technologies, hrefLink }) => {
   return (
-    <Box borderWidth="1px" overflow="hidden" border={"none"} borderRadius={"2xl"} textColor="white" bg="#F11A7B" py={2} px={2} w="100%">
+    <Box borderWidth="1px" overflow="hidden" border={"none"} borderRadius={"2xl"} textColor="white" bg="rgba(161, 204, 209, 0.5)" py={2} px={2} w="100%">
       <AspectRatio ratio={4 / 3} >
         <Link href={hrefLink} target='_blank' >
         <Image src={imageSrc} alt={title} loading="lazy" objectFit="cover" borderTopRadius={"2xl"}  />
