@@ -1,17 +1,25 @@
 import React from 'react';
 import { Box, Text, Grid, GridItem, Image } from '@chakra-ui/react';
+import project1 from "../../../assets/images/project-1.png"
+import project2 from "../../../assets/images/project-2.png"
+import project3 from "../../../assets/images/project-3.png"
+
 
 
 
 const ProjectCard = ({ imageSrc, title, description, technologies }) => {
   return (
-    <Box borderWidth="1px" borderRadius="lg" overflow="hidden" border={"none"}  mt={5} textColor={"white"} >
-      <Image src={imageSrc} alt={title}  className='m-auto'/>
-      <Text fontSize="xl" mt={2}>
+    <Box borderWidth="1px"   overflow="hidden" border={"none"}  textColor={"white"}  bg={"#F6F4EB"} py={2} px={2}   >
+      <Image src={imageSrc} alt={title} loading="lazy"
+              maxW={"100%"}
+              h={"200px"}
+              objectFit={"contain"}
+  />
+      <Text fontSize="xl" mt={2} textColor={"#EAC696"} >
         {title}
       </Text>
-      <Text mt={2}>{description}</Text>
-      <Text mt={4} fontWeight="bold">
+      <Text mt={2} textColor={"#C8AE7D"} >{description}</Text>
+      <Text mt={4} textColor={"#765827"} fontWeight="bold">
         Technologies:
       </Text>
       <Text>{technologies.join(', ')}</Text>
@@ -25,30 +33,30 @@ const ProjectList = () => {
 
   const projects = [
     {
-      title: 'Project 1',
+      title: 'SahanePazar Color Game',
       description: 'Description of Project 1.',
       technologies: ['React', 'Chakra UI', 'Tailwind CSS'],
-      imageSrc: "/src/assets/images/project-2.png", // Replace with actual image source
+      imageSrc: project1 // Replace with actual image source
     },
     {
       title: 'Project 2',
       description: 'Description of Project 2.',
       technologies: ['React', 'Chakra UI', 'Tailwind CSS'],
-      imageSrc: 'https://picsum.photos/200', // Replace with actual image source
+      imageSrc: project2, // Replace with actual image source
     },
     {
       title: 'Project 3',
       description: 'Description of Project 3.',
       technologies: ['React', 'Chakra UI', 'Tailwind CSS'],
-      imageSrc: 'https://picsum.photos/200', // Replace with actual image source
+      imageSrc: project3, // Replace with actual image source
     },
     // Add more projects as needed
   ];
 
   return (
-    <Grid templateColumns="repeat(2, 1fr)" gap={6} minHeight="100vh"  display={"flex"} justifyContent={"center"} alignItems={"center"} bg="#262626" >
+    <Grid templateColumns="repeat(2, 1fr)" gap={6} minHeight="100vh"  display={"flex"} justifyContent={"center"} alignItems={"center"} bg="#262626"  >
       {projects.map((project, index) => (
-        <GridItem key={index}>
+        <GridItem key={index} mx={5} >
           <ProjectCard {...project} />
         </GridItem>
       ))}

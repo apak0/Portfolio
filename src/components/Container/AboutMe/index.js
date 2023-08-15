@@ -8,13 +8,17 @@ const AboutMe = () => {
       color="white"
       py="20"
       textAlign="center"
+      minH={"100vh"}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
     >
       <Container maxW="xl">
         <Heading as="h2" size="xl" mb="4">
           About Me
         </Heading>
         <Text fontSize="lg">
-          Hi there! I'm [Your Name], a passionate web developer with a strong
+          Hi there! I'm Muhammed Apak, a passionate web developer with a strong
           background in building user-friendly and functional websites. I love
           diving into new technologies and frameworks to create exciting and
           innovative projects.
