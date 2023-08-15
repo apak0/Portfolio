@@ -16,7 +16,7 @@ function HomePage() {
           </Text>
           <Text
             id="name-surname"
-            className="text-5xl font-extrabold  text-white tracking-widest opacity-60 "
+            className="text-5xl font-extrabold  text-white tracking-widest opacity-40 "
           >
             Muhammed Apak
           </Text>

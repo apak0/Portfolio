@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 function Navbar() {
   return (
     <Box className="absolute w-full mt-16 z-10  " >
-      <Box className="flex justify-center bg-transparent text-3xl font-bold text-white text-opacity-30   ">
+      <Box className="flex justify-center bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30   ">
         <ul className="flex">
           <li>
             <Text className="ml-12  hover:text-neutral-100 hover:text-opacity-90 transition ease-in-out  duration-500 hover:scale-110">
