@@ -57,13 +57,14 @@ function Navbar() {
           pt={20}
           pl={10}
           display={{ base: "block", md: "none" }}
-          bg="linear-gradient(to bottom, #2193b0, #6dd5ed)"
+          bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 0.9))"
           color="#94716b"
           listStyleType={"none"}
           fontSize={"6xl"}
           height={"100vh"}
           justifyContent={"center"}
           alignItems={"center"}
+          
           
         >
           {/* Mobil menü içeriği */}
@@ -79,12 +80,14 @@ function Navbar() {
 
 function NavItem({ to, label }) {
   return (
-    <Box as="li" mx={{ base: 0, md: 4 }}>
-      <Text className="hover:text-neutral-100 hover:text-opacity-90 transition ease-in-out duration-500 hover:scale-110">
-        <Link to={to} smooth={true}>
-          {label}
-        </Link>
-      </Text>
+    <Box as="li" className="mx-0 md:mx-4">
+      <Link
+        to={to}
+        smooth={true}
+        className="text-gray-600 hover:text-orange-400 transition duration-300 transform hover:scale-105"
+      >
+        {label}
+      </Link>
     </Box>
   );
 }
