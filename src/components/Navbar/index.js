@@ -43,7 +43,7 @@ function Navbar() {
           />
         ) : (
           <Flex align="center" as="ul" listStyleType="none">
-            <NavItem to="/" label="Home Page" />
+            
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
             <NavItem to="contact" label="Contact" />
@@ -68,7 +68,7 @@ function Navbar() {
           
         >
           {/* Mobil menü içeriği */}
-          <NavItem to="/" label="Home Page" />
+          
           <NavItem to="projects" label="Projects" />
           <NavItem to="aboutme" label="About Me" />
           <NavItem to="contact" label="Contact" />
@@ -84,7 +84,7 @@ function NavItem({ to, label }) {
       <Link
         to={to}
         smooth={true}
-        className="text-gray-600 hover:text-orange-400 transition duration-300 transform hover:scale-105"
+        className="text-gray-600 hover:text-orange-400 transition duration-300 transform hover:scale-125"
       >
         {label}
       </Link>
