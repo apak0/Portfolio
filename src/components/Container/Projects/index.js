@@ -2,16 +2,12 @@ import React from "react";
 import {
   Box,
   Text,
-  Grid,
-  GridItem,
   Image,
-  AspectRatio,
   Link,
   Card,
   CardBody,
   Stack,
   Heading,
-  Divider,
   Flex,
 } from "@chakra-ui/react";
 import project1 from "../../../assets/images/project-1.png";
@@ -27,22 +23,27 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <Box >
-      <Card maxW="sm">
+    <Box display={"flex"} alignItems={"center"}>
+      <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
           <Link href={hrefLink} target="_blank">
             <Image
               src={imageSrc}
               alt={title}
               loading="lazy"
-              borderRadius="lg"
               width="100%" // Resmi genişliği kutunun genişliği kadar
               height="200px" // Belirlediğiniz istediğiniz yükseklik
               objectFit="cover" // Resim boyutunu korurken gerektiğinde kırpabilir
             />
           </Link>
           <Stack mt="6" spacing="3">
-            <Heading size="md" borderBottom={"1px"} borderColor={"gray.300"}>
+            <Heading
+              size="md"
+              borderBottom={"1px"}
+              borderColor={"gray.400"}
+              mx={"auto"}
+              pb={5}
+            >
               {" "}
               {title}{" "}
             </Heading>
@@ -57,7 +58,6 @@ const ProjectCard = ({
             </Text>
           </Stack>
         </CardBody>
-        <Divider />
       </Card>
     </Box>
   );
@@ -97,7 +97,8 @@ const ProjectList = () => {
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
-      bg="#262626"
+      bg="rgba(225, 222, 152, 0.5)"
+      className="md:h-screen "
     >
       {projects.map((project, index) => (
         <Box key={index} mx={5} my={6} flex="1 0 300px" maxWidth="300px">
