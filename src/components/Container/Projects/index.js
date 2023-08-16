@@ -1,28 +1,43 @@
-import React from 'react';
-import { Box, Text, Grid, GridItem, Image, AspectRatio, Link } from '@chakra-ui/react';
+import React from 'react'
+import { Box, Text, Grid, GridItem, Image, AspectRatio, Link, Card, CardBody, Stack, Heading, Divider, Flex } from '@chakra-ui/react';
 import project1 from "../../../assets/images/project-1.png"
 import project2 from "../../../assets/images/project-2.png"
 import project3 from "../../../assets/images/project-3.png"
 
+
+
 const ProjectCard = ({ imageSrc, title, description, technologies, hrefLink }) => {
   return (
-    <Box borderWidth="1px" overflow="hidden" border={"none"} borderRadius={"2xl"} textColor="white" bg="rgba(161, 204, 209, 0.5)" py={2} px={2} w="100%">
-      <AspectRatio ratio={4 / 3} >
-        <Link href={hrefLink} target='_blank' >
-        <Image src={imageSrc} alt={title} loading="lazy" objectFit="cover" borderTopRadius={"2xl"}  />
-        </Link>
-      </AspectRatio>
-      <Text fontSize="xl" mt={2} textColor="#EAC696">
-        {title}
+   <Box>
+    <Card maxW='sm'>
+  <CardBody>
+  <Link href={hrefLink} target='_blank' >
+  <Image
+              src={imageSrc}
+              alt={title}
+              loading="lazy"
+              borderRadius="lg"
+              width="100%" // Resmi genişliği kutunun genişliği kadar
+              height="200px" // Belirlediğiniz istediğiniz yükseklik
+              objectFit="cover" // Resim boyutunu korurken gerektiğinde kırpabilir
+            />
+    </Link>
+    <Stack mt='6' spacing='3'>
+      <Heading size='md'>Living room Sofa</Heading>
+      <Text>
+        This sofa is perfect for modern tropical spaces, baroque inspired
+        spaces, earthy toned spaces and for people who love a chic design with a
+        sprinkle of vintage design.
       </Text>
-      <Text mt={2} textColor="#C8AE7D">
-        {description}
+      <Text color='blue.600' fontSize='2xl'>
+        $450
       </Text>
-      <Text mt={4} textColor="#765827" fontWeight="bold">
-        Technologies:
-      </Text>
-      <Text>{technologies.join(', ')}</Text>
-    </Box>
+    </Stack>
+  </CardBody>
+  <Divider />
+  
+</Card>
+   </Box>
   );
 };
 
@@ -53,13 +68,13 @@ const ProjectList = () => {
   ];
 
   return (
-    <Grid templateColumns="repeat(3, 1fr)" gap={6} minHeight="100vh" display="flex" justifyContent="center" alignItems="center" bg="#262626">
-      {projects.map((project, index) => (
-        <GridItem key={index} mx={5} colSpan={{ base: 1, md: 1, lg: 1, xl: 1 }}>
-          <ProjectCard {...project} />
-        </GridItem>
-      ))}
-    </Grid>
+    <Flex flexWrap="wrap" justifyContent="center" alignItems="center" bg="#262626">
+    {projects.map((project, index) => (
+      <Box key={index} mx={4} my={6} flex="1 0 300px" maxWidth="300px">
+        <ProjectCard {...project} />
+      </Box>
+    ))}
+  </Flex>
   );
 };
 
