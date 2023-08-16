@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Text, Flex, IconButton } from "@chakra-ui/react";
+import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
