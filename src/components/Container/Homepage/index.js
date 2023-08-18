@@ -10,13 +10,13 @@ function HomePage() {
     <div id="homepage" className="text-center flex justify-center h-screen ">
       <Box className="flex relative ">
         <Image src={PhotoOfMami} objectFit={"cover"} />
-        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center mt-20 ml-5">
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center mt-32 ml-5">
           <Text className="text-3xl text-white text-opacity-80 ">
             Hello, I'm
           </Text>
           <Text
             id="name-surname"
-            className="text-5xl font-extrabold  text-white tracking-widest opacity-40 "
+            className="text-5xl font-extrabold  text-gray-200 tracking-widest  "
           >
             Muhammed Apak
           </Text>

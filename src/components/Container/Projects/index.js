@@ -66,13 +66,14 @@ const ProjectCard = ({
 const ProjectList = () => {
   const projects = [
     {
-      title: "SahanePazar Color Game",
+      title: "E-Commerce App",
       description:
-        "Experience the excitement as you uncover the elusive blue box among a set of mystery boxes in this engaging web-based puzzle game.",
+        "Explore a seamless shopping journey like never before on our Online Marketplace, where you can discover a wide range of products and enjoy hassle-free online shopping.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project1, // Replace with actual image source
-      hrefLink: "https://sahane-pazar-box-game.web.app/",
+      imageSrc: project3, // Replace with actual image source
+      hrefLink: "https://bizim.onrender.com/",
     },
+
     {
       title: "Weather App",
       description:
@@ -82,13 +83,14 @@ const ProjectList = () => {
       hrefLink: "https://apakweatherapp.netlify.app/",
     },
     {
-      title: "E-Commerce App",
+      title: "SahanePazar Color Game",
       description:
-        "Explore a seamless shopping journey like never before on our Online Marketplace, where you can discover a wide range of products and enjoy hassle-free online shopping.",
+        "Experience the excitement as you uncover the elusive blue box among a set of mystery boxes in this engaging web-based puzzle game.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project3, // Replace with actual image source
-      hrefLink: "https://bizim.onrender.com/",
+      imageSrc: project1, // Replace with actual image source
+      hrefLink: "https://sahane-pazar-box-game.web.app/",
     },
+
     // Add more projects as needed
   ];
 
