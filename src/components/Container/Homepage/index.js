@@ -3,11 +3,15 @@ import PhotoOfMami from "../../../assets/images/profilePhoto-4.png";
 import "./style.css";
 import { Image } from "@chakra-ui/react";
 import { Box, Text } from "@chakra-ui/react";
+import { motion } from 'framer-motion';
+
 
 function HomePage() {
   return (
     
-    <div id="homepage" className="text-center flex justify-center h-screen ">
+    <motion.div id="homepage" className="text-center flex justify-center h-screen " initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}>
       <Box className="flex relative ">
         <Image src={PhotoOfMami} objectFit={"cover"} />
         <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center mt-32 ml-5">
@@ -25,7 +29,7 @@ function HomePage() {
           </Text>
         </Box>
       </Box>
-    </div>
+    </motion.div>
 
     
   );
