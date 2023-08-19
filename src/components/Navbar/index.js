@@ -25,7 +25,7 @@ function Navbar() {
   }, []);
 
   return (
-    <Box className="absolute w-full sm:mt-16 mt-0 z-10 ">
+    <Box className="absolute w-full sm:mt-16 mt-10 z-10 ">
       <Flex
         className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
         // Uygun hizalamayı ayarlayın
@@ -65,7 +65,7 @@ function Navbar() {
           animate={{ opacity: 1, maxWidth: "70%", fontSize:"2.25rem" }}
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.3}}
-
+         
           className={`mobile-menu ${isOpen ? "open" : ""}`}
         >
           <Box
@@ -79,7 +79,7 @@ function Navbar() {
             listStyleType={"none"}
             fontSize={"4xl"}
             
-            height={"100vh"}
+            height={"80vh"}
             justifyContent={"center"}
             alignItems={"center"}
             borderRightRadius={"full"}
