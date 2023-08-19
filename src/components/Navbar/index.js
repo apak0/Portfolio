@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion"; // Framer Motion eklemeyi unutmayın
 import "./style.css";
 
 function Navbar() {
@@ -24,29 +25,33 @@ function Navbar() {
   }, []);
 
   return (
-    <Box className="absolute w-full  sm:mt-16 mt-0 z-10  ">
+    <Box className="absolute w-full sm:mt-16 mt-0 z-10 ">
       <Flex
-        className=" sm:justify-center justify-between  bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
-         // Uygun hizalamayı ayarlayın
+        className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
+        // Uygun hizalamayı ayarlayın
       >
         {isMobile ? (
-          <IconButton
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            onClick={() => setIsOpen(!isOpen)}
-            size="xl"
-            variant="ghost"
-            display={{ base: "flex", md: "none" }}
-            color={"crimson"}
-            ml={5}
-            position={"absolute"}
-            mt={5}
-            _hover={"none"}
-            
-            
-          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <IconButton
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              onClick={() => setIsOpen(!isOpen)}
+              size="xl"
+              variant="ghost"
+              display={{ base: "flex", md: "none" }}
+              color={"crimson"}
+              ml={5}
+              position={"absolute"}
+              mt={5}
+              _hover={"none"}
+            />
+          </motion.div>
         ) : (
           <Flex align="center" as="ul" listStyleType="none">
-            
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
             <NavItem to="contact" label="Contact" />
@@ -55,28 +60,31 @@ function Navbar() {
       </Flex>
 
       {isMobile && isOpen && (
-        <Box
-          p="4"
-          pt={20}
-          pl={10}
-          display={{ base: "block", md: "none" }}
-          bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 0.9))"
-          color="#94716b"
-          listStyleType={"none"}
-          fontSize={"6xl"}
-          height={"100vh"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          className={`mobile-menu ${isOpen ? 'open' : ''}`}
-          
-          
+        <motion.div
+          initial={{ opacity: 0, maxHeight: 0 }}
+          animate={{ opacity: 1, maxHeight: "1000px" }}
+          exit={{ opacity: 0, maxHeight: 0 }}
+          transition={{ duration: 0.3 }}
+          className={`mobile-menu ${isOpen ? "open" : ""}`}
         >
-          {/* Mobil menü içeriği */}
-          
-          <NavItem to="projects" label="Projects" />
-          <NavItem to="aboutme" label="About Me" />
-          <NavItem to="contact" label="Contact" />
-        </Box>
+          <Box
+            p="4"
+            pt={20}
+            pl={10}
+            display={{ base: "block", md: "none" }}
+            bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 0.9))"
+            color="#94716b"
+            listStyleType={"none"}
+            fontSize={"6xl"}
+            height={"100vh"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <NavItem to="projects" label="Projects" />
+            <NavItem to="aboutme" label="About Me" />
+            <NavItem to="contact" label="Contact" />
+          </Box>
+        </motion.div>
       )}
     </Box>
   );
