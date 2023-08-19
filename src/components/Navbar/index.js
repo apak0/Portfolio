@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import "./style.css";
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,6 +40,8 @@ function Navbar() {
             ml={5}
             position={"absolute"}
             mt={5}
+            _hover={"none"}
+            
             
           />
         ) : (
@@ -64,6 +67,7 @@ function Navbar() {
           height={"100vh"}
           justifyContent={"center"}
           alignItems={"center"}
+          className={`mobile-menu ${isOpen ? 'open' : ''}`}
           
           
         >

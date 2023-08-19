@@ -1,0 +1,11 @@
+.mobile-menu {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .mobile-menu.open {
+    opacity: 1;
+    max-height: 1000px; /* Menü yüksekliği, içeriğe göre ayarlayın */
+  }
