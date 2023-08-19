@@ -27,7 +27,7 @@ const Contact = () => {
           <Link href="https://github.com/apak0" isExternal mx="2" textDecoration={"underline"} _hover={{color:"aqua"}}>
             <Icon as={FaGithub} boxSize="20" />
           </Link>
-          <Link href="https://www.instagram.com/yourusername" isExternal mx="2" _hover={{color:"aqua"}}>
+          <Link href="https://www.instagram.com/m_apak_" isExternal mx="2" _hover={{color:"aqua"}}>
             <Icon as={FaInstagram} boxSize="20" />
           </Link>
         </Flex>
