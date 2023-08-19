@@ -4,7 +4,7 @@ import { Box, Container, Heading, Text } from '@chakra-ui/react';
 const AboutMe = () => {
   return (
     <Box
-      bgGradient="linear(to-r, teal.500, blue.500)"
+      bgGradient="linear(to-b, teal.500, blue.500)"
       color="white"
       py="20"
       textAlign="center"

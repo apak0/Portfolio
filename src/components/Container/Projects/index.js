@@ -99,7 +99,8 @@ const ProjectList = () => {
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
-      bg="rgba(225, 222, 152, 0.5)"
+      bgGradient="linear(to-b, #c3c3c3, teal.500)"
+     
       className="md:h-screen "
     >
       {projects.map((project, index) => (
