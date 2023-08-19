@@ -99,7 +99,7 @@ const ProjectList = () => {
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
-      bgGradient="linear(to-b, #c3c3c3, teal.500)"
+      bgGradient="linear(to-b, rgba(249, 76, 16, 0.7), teal.500)"
      
       className="md:h-screen "
     >
