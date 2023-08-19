@@ -62,7 +62,7 @@ function Navbar() {
       {isMobile && isOpen && (
         <motion.div
           initial={{ opacity: 0, maxWidth: 0, fontSize:"1.rem" }}
-          animate={{ opacity: 1, maxWidth: "50%", fontSize:"2.25rem" }}
+          animate={{ opacity: 1, maxWidth: "70%", fontSize:"2.25rem" }}
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.3}}
 
@@ -78,6 +78,7 @@ function Navbar() {
             color="#94716b"
             listStyleType={"none"}
             fontSize={"4xl"}
+            
             height={"100vh"}
             justifyContent={"center"}
             alignItems={"center"}
