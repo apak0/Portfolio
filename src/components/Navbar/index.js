@@ -61,24 +61,27 @@ function Navbar() {
 
       {isMobile && isOpen && (
         <motion.div
-          initial={{ opacity: 0, maxHeight: 0 }}
-          animate={{ opacity: 1, maxHeight: "1000px" }}
+          initial={{ opacity: 0, maxWidth: 0, fontSize:"1.rem" }}
+          animate={{ opacity: 1, maxWidth: "50%", fontSize:"2.25rem" }}
           exit={{ opacity: 0, maxHeight: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3}}
+
           className={`mobile-menu ${isOpen ? "open" : ""}`}
         >
           <Box
             p="4"
             pt={20}
             pl={10}
+            
             display={{ base: "block", md: "none" }}
-            bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 0.9))"
+            bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 1))"
             color="#94716b"
             listStyleType={"none"}
-            fontSize={"6xl"}
+            fontSize={"4xl"}
             height={"100vh"}
             justifyContent={"center"}
             alignItems={"center"}
+            borderRightRadius={"full"}
           >
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
@@ -92,11 +95,11 @@ function Navbar() {
 
 function NavItem({ to, label }) {
   return (
-    <Box as="li" className="mx-0 md:mx-4">
+    <Box as="li" className="mx-0 md:mx-4 mb-10">
       <Link
         to={to}
         smooth={true}
-        className="text-gray-50 hover:text-orange-200 transition duration-300 transform hover:scale-125"
+        className="text-gray-50 hover:text-orange-200 transition duration-300 transform hover:scale-125 "
       >
         {label}
       </Link>
