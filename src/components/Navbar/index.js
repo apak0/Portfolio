@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -9,26 +9,37 @@ function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuRef = useRef(null);
+
   const handleResize = () => {
     if (window.innerWidth <= 768) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
-      setIsOpen(false); // Mobil menüyü kapat
+      setIsOpen(false);
+    }
+  };
+
+  const handleOutsideClick = (e) => {
+    if (isOpen && !menuRef.current.contains(e.target)) {
+      setIsOpen(false);
     }
   };
 
   useEffect(() => {
-    handleResize(); // Sayfa yüklendiğinde ekran genişliğini kontrol et
+    handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
 
   return (
     <Box className="absolute w-full sm:mt-16 mt-10 z-10 ">
       <Flex
         className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
-        // Uygun hizalamayı ayarlayın
       >
         {isMobile ? (
           <motion.div
@@ -36,6 +47,7 @@ function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
+            ref={menuRef}
           >
             <IconButton
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -62,10 +74,11 @@ function Navbar() {
       {isMobile && isOpen && (
         <motion.div
           initial={{ opacity: 0, maxHeight: 0, fontSize: "1rem" }}
-          animate={{ opacity: 1, maxHeight: "100vh", fontSize: "1rem" }} // Font büyüklüğü değiştirilmedi
+          animate={{ opacity: 1, maxHeight: "100vh", fontSize: "1rem" }}
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.3 }}
           className={`mobile-menu ${isOpen ? "open" : ""}`}
+          ref={menuRef} // Menü referansını ekliyoruz
         >
           <Box
             p="4"
@@ -80,6 +93,9 @@ function Navbar() {
             justifyContent={"center"}
             alignItems={"center"}
             borderRightRadius={"full"}
+            onClick={(e) => e.stopPropagation()} // Menü içine tıklanınca kapanmasını engelliyoruz
+            className="hamburgerMenuInside"
+            overflow={"hidden"}
           >
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
