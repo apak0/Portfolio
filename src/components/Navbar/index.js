@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
@@ -96,6 +97,7 @@ function Navbar() {
             onClick={(e) => e.stopPropagation()} // Menü içine tıklanınca kapanmasını engelliyoruz
             className="hamburgerMenuInside"
             overflow={"hidden"}
+            maxW={"50vh"}
           >
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
