@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { motion } from "framer-motion"; // Framer Motion eklemeyi unutmayın
+import { motion } from "framer-motion";
 import "./style.css";
 
 function Navbar() {
@@ -61,24 +61,21 @@ function Navbar() {
 
       {isMobile && isOpen && (
         <motion.div
-          initial={{ opacity: 0, maxWidth: 0, fontSize:"1.rem" }}
-          animate={{ opacity: 1, maxWidth: "70%", fontSize:"2.25rem" }}
+          initial={{ opacity: 0, maxHeight: 0, fontSize: "1rem" }}
+          animate={{ opacity: 1, maxHeight: "100vh", fontSize: "1rem" }} // Font büyüklüğü değiştirilmedi
           exit={{ opacity: 0, maxHeight: 0 }}
-          transition={{ duration: 0.3}}
-         
+          transition={{ duration: 0.3 }}
           className={`mobile-menu ${isOpen ? "open" : ""}`}
         >
           <Box
             p="4"
             pt={20}
             pl={10}
-            
             display={{ base: "block", md: "none" }}
             bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 1))"
             color="#94716b"
             listStyleType={"none"}
             fontSize={"4xl"}
-            
             height={"80vh"}
             justifyContent={"center"}
             alignItems={"center"}
@@ -100,7 +97,7 @@ function NavItem({ to, label }) {
       <Link
         to={to}
         smooth={true}
-        className="text-gray-50 hover:text-orange-200 transition duration-300 transform hover:scale-125 "
+        className="text-gray-50 hover:text-orange-200 transition duration-300 transform hover:scale-125"
       >
         {label}
       </Link>
