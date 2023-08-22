@@ -9,11 +9,15 @@ import {
   Stack,
   Heading,
   Flex,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
+
 import project1 from "../../../assets/images/project-1.png";
 import project2 from "../../../assets/images/project-2.png";
 import project3 from "../../../assets/images/project-3.png";
 import LinesEllipsis from "react-lines-ellipsis";
+import Atropos from 'atropos/react';
 
 const ProjectCard = ({
   imageSrc,
@@ -23,19 +27,20 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <Box display={"flex"} alignItems={"center"}>
+    <LinkBox as='article'  rounded='md'>
+      
       <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
-          <Link href={hrefLink} target="_blank">
+          <LinkOverlay  href={hrefLink} target="_blank">
             <Image
               src={imageSrc}
               alt={title}
               loading="lazy"
-              width="100%" // Resmi genişliği kutunun genişliği kadar
-              height="200px" // Belirlediğiniz istediğiniz yükseklik
-              objectFit="cover" // Resim boyutunu korurken gerektiğinde kırpabilir
+              width="100%" 
+              height="200px" 
+              objectFit="cover" 
             />
-          </Link>
+          </LinkOverlay >
           <Stack mt="6" spacing="3">
             <Heading
               size="md"
@@ -59,7 +64,7 @@ const ProjectCard = ({
           </Stack>
         </CardBody>
       </Card>
-    </Box>
+    </LinkBox >
   );
 };
 
@@ -104,9 +109,14 @@ const ProjectList = () => {
       className="md:h-screen "
     >
       {projects.map((project, index) => (
-        <Box key={index} mx={5} my={6} flex="1 0 300px" maxWidth="300px">
+        <Box margin={5}>
+          <Atropos shadow={false}  className="my-atropos">
+         
           <ProjectCard {...project} />
-        </Box>
+          
+          </Atropos>
+          </Box>
+         
       ))}
     </Flex>
   );

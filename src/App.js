@@ -1,4 +1,5 @@
 import "./App.css";
+import 'atropos/css'
 import Navbar from "./components/Navbar";
 import HomePage from "./components/Container/Homepage";
 import AboutMe from "./components/Container/AboutMe";
