@@ -26,9 +26,11 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <LinkBox as="article" rounded="md">
+    <Box display={"flex"} alignItems={"center"} m={10} >
+   
       <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
+        <LinkBox as="article" rounded="md">
           <LinkOverlay href={hrefLink} target="_blank">
             <Image
               src={imageSrc}
@@ -39,6 +41,7 @@ const ProjectCard = ({
               objectFit="cover"
             />
           </LinkOverlay>
+          </LinkBox>
           <Stack mt="6" spacing="3">
             <Heading
               size="md"
@@ -62,7 +65,8 @@ const ProjectCard = ({
           </Stack>
         </CardBody>
       </Card>
-    </LinkBox>
+    
+    </Box>
   );
 };
 
@@ -103,10 +107,10 @@ const ProjectList = () => {
       justifyContent="center"
       alignItems="center"
       bgGradient="linear(to-b, rgba(249, 76, 16, 0.7), teal.500)"
-      className="md:h-screen "
+      className="md:h-screen"
     >
       {projects.map((project, index) => (
-        <Box margin={5}>
+        <Box margin={5} mb={20}>
           <Atropos shadow={false} className="my-atropos">
             <ProjectCard {...project} />
           </Atropos>
