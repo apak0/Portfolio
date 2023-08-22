@@ -3,7 +3,6 @@ import {
   Box,
   Text,
   Image,
-  Link,
   Card,
   CardBody,
   Stack,
@@ -17,7 +16,7 @@ import project1 from "../../../assets/images/project-1.png";
 import project2 from "../../../assets/images/project-2.png";
 import project3 from "../../../assets/images/project-3.png";
 import LinesEllipsis from "react-lines-ellipsis";
-import Atropos from 'atropos/react';
+import Atropos from "atropos/react";
 
 const ProjectCard = ({
   imageSrc,
@@ -27,20 +26,19 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <LinkBox as='article'  rounded='md'>
-      
+    <LinkBox as="article" rounded="md">
       <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
-          <LinkOverlay  href={hrefLink} target="_blank">
+          <LinkOverlay href={hrefLink} target="_blank">
             <Image
               src={imageSrc}
               alt={title}
               loading="lazy"
-              width="100%" 
-              height="200px" 
-              objectFit="cover" 
+              width="100%"
+              height="200px"
+              objectFit="cover"
             />
-          </LinkOverlay >
+          </LinkOverlay>
           <Stack mt="6" spacing="3">
             <Heading
               size="md"
@@ -64,7 +62,7 @@ const ProjectCard = ({
           </Stack>
         </CardBody>
       </Card>
-    </LinkBox >
+    </LinkBox>
   );
 };
 
@@ -105,18 +103,14 @@ const ProjectList = () => {
       justifyContent="center"
       alignItems="center"
       bgGradient="linear(to-b, rgba(249, 76, 16, 0.7), teal.500)"
-     
       className="md:h-screen "
     >
       {projects.map((project, index) => (
         <Box margin={5}>
-          <Atropos shadow={false}  className="my-atropos">
-         
-          <ProjectCard {...project} />
-          
+          <Atropos shadow={false} className="my-atropos">
+            <ProjectCard {...project} />
           </Atropos>
-          </Box>
-         
+        </Box>
       ))}
     </Flex>
   );
