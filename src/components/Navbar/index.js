@@ -79,7 +79,9 @@ function Navbar() {
           exit={{ opacity: 0, maxHeight: 0 }}
           transition={{ duration: 0.3 }}
           className={`mobile-menu ${isOpen ? "open" : ""}`}
-          ref={menuRef} // Menü referansını ekliyoruz
+          ref={menuRef} // add menü ref
+         
+          
         >
           <Box
             p="4"
@@ -90,14 +92,15 @@ function Navbar() {
             color="#94716b"
             listStyleType={"none"}
             fontSize={"4xl"}
-            height={"80vh"}
+            height={"50vh"}
             justifyContent={"center"}
             alignItems={"center"}
             borderRightRadius={"full"}
-            onClick={(e) => e.stopPropagation()} // Menü içine tıklanınca kapanmasını engelliyoruz
+            onClick={(e) => e.stopPropagation()} //When click out of the menu it will be closed
             className="hamburgerMenuInside"
-            overflow={"hidden"}
+            overflowY={"auto"}
             maxW={"50vh"}
+            
           >
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
