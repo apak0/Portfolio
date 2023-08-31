@@ -92,7 +92,7 @@ function Navbar() {
             color="#94716b"
             listStyleType={"none"}
             fontSize={"4xl"}
-            height={"50vh"}
+            height={"60vh"}
             justifyContent={"center"}
             alignItems={"center"}
             borderRightRadius={"full"}
@@ -104,7 +104,7 @@ function Navbar() {
           >
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
-            <NavItem to="contact" label="Contact" />
+           
           </Box>
         </motion.div>
       )}
