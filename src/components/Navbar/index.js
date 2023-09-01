@@ -87,7 +87,7 @@ function Navbar() {
             p="4"
             pt={20}
             pl={10}
-            display={{ base: "block", md: "none" }}
+            display={{ base: "inline-block", md: "none" }}
             bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 1))"
             color="#94716b"
             listStyleType={"none"}
@@ -98,7 +98,7 @@ function Navbar() {
             borderRightRadius={"full"}
             onClick={(e) => e.stopPropagation()} //When click out of the menu it will be closed
             className="hamburgerMenuInside"
-            overflowY={"auto"}
+            overflow={"hidden"}
             maxW={"50vh"}
             
           >
