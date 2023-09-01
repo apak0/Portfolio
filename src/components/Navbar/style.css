@@ -8,6 +8,6 @@
   .mobile-menu.open {
     opacity: 1;
     max-height: 1000px; /* Menü yüksekliği, içeriğe göre ayarlayın */
-    display: flex;
-    overflow-y: auto;
+    display: inline-block;
+    overflow: hidden;
   }
