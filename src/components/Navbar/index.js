@@ -56,7 +56,7 @@ function Navbar() {
               size="xl"
               variant="ghost"
               display={{ base: "flex", md: "none" }}
-              color={"#4D2DB7"}
+              color={"orange.400"}
               ml={5}
               position={"absolute"}
               mt={5}
@@ -73,11 +73,8 @@ function Navbar() {
       </Flex>
 
       {isMobile && isOpen && (
-        <motion.div
-          initial={{ opacity: 0, maxHeight: 0, fontSize: "1rem" }}
-          animate={{ opacity: 1, maxHeight: "100vh", fontSize: "1rem" }}
-          exit={{ opacity: 0, maxHeight: 0 }}
-          transition={{ duration: 0.3 }}
+        <div
+         
           className={`mobile-menu ${isOpen ? "open" : ""}`}
           ref={menuRef} // add menü ref
          
@@ -87,7 +84,7 @@ function Navbar() {
             p="4"
             pt={20}
             pl={10}
-            display={{ base: "inline-block", md: "none" }}
+            display={{ base: "grid", md: "none" }}
             bg="#64CCC5"
             color="#94716b"
             listStyleType={"none"}
@@ -106,7 +103,7 @@ function Navbar() {
             <NavItem to="aboutme" label="About Me" />
             <NavItem to="contact" label="Contact" />
           </Box>
-        </motion.div>
+        </div>
       )}
     </Box>
   );
@@ -114,15 +111,23 @@ function Navbar() {
 
 function NavItem({ to, label }) {
   return (
-    <Box as="li" className="mx-0 md:mx-4 mb-10">
+    <motion.Box as="li" className="mx-0 md:mx-4 mb-10" 
+    initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+       transition={{
+  ease: "linear",
+  duration: 3,
+  x: { duration: 1 }
+}}
+      exit={{ opacity: 0 }}>
       <Link
         to={to}
         smooth={true}
-        className="text-gray-50 hover:text-orange-200 transition duration-300 transform hover:scale-125"
+        className="text-gray-50 hover:text-orange-400 transition duration-300 transform hover:scale-125"
       >
         {label}
       </Link>
-    </Box>
+    </motion.Box>
   );
 }
 

@@ -7,14 +7,19 @@ import { motion } from "framer-motion";
 
 function HomePage() {
   return (
-    <motion.div
+    <div
       id="homepage"
       className="text-center flex justify-center h-screen "
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      
     >
-      <Box className="flex relative ">
+      <motion.Box className="flex relative " initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+       transition={{
+  ease: "linear",
+  duration: 2,
+  x: { duration: 1 }
+}}
+      exit={{ opacity: 0 }}>
         <Image src={PhotoOfMami} objectFit={"cover"} />
         <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center mt-32 ml-5">
           <Text className="text-5xl text-white text-opacity-80  ">
@@ -30,8 +35,8 @@ function HomePage() {
             AND THIS IS MY RESUME
           </Text>
         </Box>
-      </Box>
-    </motion.div>
+      </motion.Box>
+    </div>
   );
 }
 
