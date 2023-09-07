@@ -2,7 +2,7 @@ import React from "react";
 import PhotoOfMami from "../../../assets/images/profilePhoto-12.png";
 import "./style.css";
 import { Image } from "@chakra-ui/react";
-import { Box, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 function HomePage() {
