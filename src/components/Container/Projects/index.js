@@ -18,6 +18,8 @@ import project3 from "../../../assets/images/project-3.png";
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
 
+
+
 const ProjectCard = ({
   imageSrc,
   title,
@@ -26,7 +28,8 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <Box display={"flex"} alignItems={"center"} m={10} >
+    <Box display={"flex"} alignItems={"center"} m={10}
+    >
    
       <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
@@ -104,12 +107,21 @@ const ProjectList = () => {
   ];
 
   return (
+    
     <Flex
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
       bgGradient="linear(to-b, rgba(249, 76, 16, 0.7), teal.500)"
       className="md:h-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+       transition={{
+        ease: "linear",
+        duration: 5,
+        x: { duration: 1 }
+}}
+      exit={{ opacity: 0 }} 
     >
       {projects.map((project, index) => (
         <Box margin={5} mb={20}>

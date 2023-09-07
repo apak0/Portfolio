@@ -116,7 +116,7 @@ function NavItem({ to, label }) {
       animate={{ opacity: 1 }}
        transition={{
   ease: "linear",
-  duration: 3,
+  duration: 1,
   x: { duration: 1 }
 }}
       exit={{ opacity: 0 }}>
