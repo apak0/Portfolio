@@ -56,7 +56,7 @@ function Navbar() {
               size="xl"
               variant="ghost"
               display={{ base: "flex", md: "none" }}
-              color={"crimson"}
+              color={"#4D2DB7"}
               ml={5}
               position={"absolute"}
               mt={5}
@@ -88,7 +88,7 @@ function Navbar() {
             pt={20}
             pl={10}
             display={{ base: "inline-block", md: "none" }}
-            bg="linear-gradient(to bottom, rgba(33, 147, 176, 1), rgba(109, 213, 237, 1))"
+            bg="#64CCC5"
             color="#94716b"
             listStyleType={"none"}
             fontSize={"4xl"}
