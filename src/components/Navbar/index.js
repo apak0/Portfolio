@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
-import { Box, Flex, IconButton } from "@chakra-ui/react";
+import { background, Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
@@ -43,12 +43,11 @@ function Navbar() {
         className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
       >
         {isMobile ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+          <div
+          
+          
             ref={menuRef}
+            
           >
             <IconButton
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -62,7 +61,7 @@ function Navbar() {
               mt={5}
               _hover={"none"}
             />
-          </motion.div>
+          </div>
         ) : (
           <Flex align="center" as="ul" listStyleType="none">
             <NavItem to="projects" label="Projects" />
@@ -73,13 +72,19 @@ function Navbar() {
       </Flex>
 
       {isMobile && isOpen && (
-        <div
+        <motion.div
          
           className={`mobile-menu ${isOpen ? "open" : ""}`}
           ref={menuRef} // add menü ref
-         
-          
-        >
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+           transition={{
+            ease: "linear",
+            
+            
+          }}
+          exit={{ opacity: 1 }}
+          >
           <Box
             p="4"
             pt={20}
@@ -103,7 +108,7 @@ function Navbar() {
             <NavItem to="aboutme" label="About Me" />
             <NavItem to="contact" label="Contact" />
           </Box>
-        </div>
+        </motion.div>
       )}
     </Box>
   );
@@ -111,15 +116,17 @@ function Navbar() {
 
 function NavItem({ to, label }) {
   return (
-    <motion.Box as="li" className="mx-0 md:mx-4 mb-10" 
-    initial={{ opacity: 0 }}
+    <motion.Box as="ul" className="mx-0 md:mx-4 mb-10" 
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
        transition={{
-  ease: "linear",
-  duration: 1,
-  x: { duration: 1 }
-}}
-      exit={{ opacity: 0 }}>
+        ease: "linear",
+        duration: 1,
+        x: { duration: 1 }
+      }}
+      exit={{ opacity: 1 }}
+      
+      >
       <Link
         to={to}
         smooth={true}
