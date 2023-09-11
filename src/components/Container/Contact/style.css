@@ -1,0 +1,11 @@
+.animate-me-top {
+    transform: translateX(30rem); 
+    opacity: 0; 
+    transition: transform 1s ease, opacity 1s ease; 
+  }
+
+  .animate-me-bottom {
+    transform: translateY(30rem); 
+    opacity: 0; 
+    transition: transform 1s ease, opacity 1s ease; 
+  }

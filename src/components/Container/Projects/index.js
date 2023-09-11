@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import {
   Box,
   Text,
@@ -17,6 +17,7 @@ import project2 from "../../../assets/images/project-2.png";
 import project3 from "../../../assets/images/project-3.png";
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
+import "./style.css";
 
 
 
@@ -106,6 +107,31 @@ const ProjectList = () => {
     // Add more projects as needed
   ];
 
+  useEffect(() => {
+    const animateElements = document.querySelectorAll('.animate-me');
+    
+    const handleScroll = () => {
+      animateElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight) {
+          element.style.transform = 'translateX(0)'; // Move the object to the left
+          element.style.opacity = 1; // Change the opacity to 1
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Only working for component mounting
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     
     <Flex
@@ -124,9 +150,9 @@ const ProjectList = () => {
       exit={{ opacity: 0 }} 
     >
       {projects.map((project, index) => (
-        <Box margin={5} mb={20}>
+        <Box className='animate-me' margin={5} mb={20}>
           
-            <ProjectCard {...project} />
+            <ProjectCard {...project}  />
           
         </Box>
       ))}

@@ -1,7 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import "./style.css";
 
 const AboutMe = () => {
+
+  useEffect(() => {
+    const animateElements = document.querySelectorAll('.animate-me-up');
+    
+    const handleScroll = () => {
+      animateElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight) {
+          element.style.transform = 'translateY(0)'; // Nesneyi yukarı kaydır
+          element.style.opacity = 1; // Saydamlığı kaldır
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // İlk yüklemede de çalıştırmak için
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <Box
       bg="teal.500"
@@ -13,7 +39,7 @@ const AboutMe = () => {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Container maxW="xl">
+      <Container maxW="xl" className='animate-me-up'>
         <Heading as="h2" size="xl" mb="4">
           About Me
         </Heading>

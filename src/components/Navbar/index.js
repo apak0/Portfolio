@@ -43,12 +43,8 @@ function Navbar() {
         className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
       >
         {isMobile ? (
-          <div
-          
-          
-            ref={menuRef}
-            
-          >
+          <div 
+          ref={menuRef}>
             <IconButton
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
               onClick={() => setIsOpen(!isOpen)}

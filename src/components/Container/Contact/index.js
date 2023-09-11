@@ -1,16 +1,61 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Container, Heading, Text, Link, Icon, Flex } from '@chakra-ui/react';
 import { FaEnvelope, FaGithub, FaInstagram,  } from 'react-icons/fa';
+import "./style.css";
+
 
 
 const Contact = () => {
+
+  useEffect(() => {
+    const animateElementsTop = document.querySelectorAll('.animate-me-top ');
+    const animateElementsBottom = document.querySelectorAll('.animate-me-bottom ');
+    
+    const handleScroll = () => {
+
+      // Top elements of component
+      animateElementsTop.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight) {
+          element.style.transform = 'translateX(0)'; // Move the object to the left
+          element.style.opacity = 1; // Change the opacity to 1
+        }
+      });
+
+       // Bottom elements of component
+      animateElementsBottom.forEach((element) => {
+        const elementBottom = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementBottom < windowHeight) {
+          element.style.transform = 'translateY(0)'; // Move the object to the top
+          element.style.opacity = 1; // Change the opacity to 1
+        }
+      });
+
+
+
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Only working for component mounting
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  
   return (
     <Box
       bg="#262626"
       color="white"
       py="20"
       textAlign="center"
-      className='h-screen flex items-center'
+      className='h-screen flex items-center '
     >
       <Container maxW="xl" bgGradient="linear(to-r, teal.500, blue.500)"  bgClip={"text"}>
         <Heading  as="h2" size="xl" mb="4"  >
@@ -20,7 +65,7 @@ const Contact = () => {
           </Text>
         </Heading>
         
-        <Flex justifyContent="center" mb="4" color={"teal.200"} bgClip={""}  >
+        <Flex justifyContent="center" mb="4" color={"teal.200"} bgClip={""}  className='animate-me-top' >
           <Link e-mail  href="mailto:muhampak25@mail.com" isExternal mx="2" _hover={{color:"aqua"}} >
             <Icon as={FaEnvelope} boxSize="20" />
           </Link>
@@ -31,10 +76,12 @@ const Contact = () => {
             <Icon as={FaInstagram} boxSize="20" />
           </Link>
         </Flex>
-        <Text fontSize="lg">
+        <Box className='animate-me-bottom'>
+        <Text fontSize="lg"  >
           Feel free to contact me through email, check out my projects on GitHub,
           or connect with me on Instagram.
         </Text>
+        </Box>
       </Container>
     </Box>
   );

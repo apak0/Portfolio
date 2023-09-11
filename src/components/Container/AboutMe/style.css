@@ -1,0 +1,5 @@
+.animate-me-up {
+  transform: translateY(20rem); /* Nesneleri başlangıçta aşağı kaydır */
+  opacity: 0; /* Başlangıçta saydam olsun */
+  transition: transform 1s ease, opacity 1s ease; /* Geçiş süresini artır */
+}
