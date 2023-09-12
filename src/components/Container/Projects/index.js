@@ -116,7 +116,7 @@ const ProjectList = () => {
         const windowHeight = window.innerHeight;
         
         if (elementTop < windowHeight) {
-          element.style.transform = 'translateX(0)'; // Move the object to the left
+          element.style.transform = 'translateY(0)'; // Move the object to the left
           element.style.opacity = 1; // Change the opacity to 1
         }
       });
