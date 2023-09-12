@@ -1,5 +1,5 @@
-.animate-me {
-    transform: translateX(30rem); 
+.animate-me-projects {
+    transform: translateX(5rem); 
     opacity: 0; 
     transition: transform 1s ease, opacity 1s ease; 
   }

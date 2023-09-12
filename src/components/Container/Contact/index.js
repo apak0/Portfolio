@@ -8,41 +8,25 @@ import "./style.css";
 const Contact = () => {
 
   useEffect(() => {
-    const animateElementsTop = document.querySelectorAll('.animate-me-top ');
-    const animateElementsBottom = document.querySelectorAll('.animate-me-bottom ');
+    const animateElements = document.querySelectorAll('.animate-me-contact');
     
     const handleScroll = () => {
-
-      // Top elements of component
-      animateElementsTop.forEach((element) => {
+      animateElements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         
         if (elementTop < windowHeight) {
-          element.style.transform = 'translateX(0)'; // Move the object to the left
+          element.style.transform = 'translateY(0)'; // Move the object to the left
           element.style.opacity = 1; // Change the opacity to 1
         }
       });
-
-       // Bottom elements of component
-      animateElementsBottom.forEach((element) => {
-        const elementBottom = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementBottom < windowHeight) {
-          element.style.transform = 'translateY(0)'; // Move the object to the top
-          element.style.opacity = 1; // Change the opacity to 1
-        }
-      });
-
-
-
     };
 
     window.addEventListener('scroll', handleScroll);
 
     // Only working for component mounting
     handleScroll();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -57,7 +41,7 @@ const Contact = () => {
       textAlign="center"
       className='h-screen flex items-center '
     >
-      <Container maxW="xl" bgGradient="linear(to-r, teal.500, blue.500)"  bgClip={"text"}>
+      <Container maxW="xl" bgGradient="linear(to-r, teal.500, blue.500)"  bgClip={"text"} className='animate-me-contact'>
         <Heading  as="h2" size="xl" mb="4"  >
           <Text >
 
@@ -76,7 +60,7 @@ const Contact = () => {
             <Icon as={FaInstagram} boxSize="20" />
           </Link>
         </Flex>
-        <Box className='animate-me-bottom'>
+        <Box >
         <Text fontSize="lg"  >
           Feel free to contact me through email, check out my projects on GitHub,
           or connect with me on Instagram.

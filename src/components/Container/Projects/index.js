@@ -108,7 +108,7 @@ const ProjectList = () => {
   ];
 
   useEffect(() => {
-    const animateElements = document.querySelectorAll('.animate-me');
+    const animateElements = document.querySelectorAll('.animate-me-projects');
     
     const handleScroll = () => {
       animateElements.forEach((element) => {
@@ -150,7 +150,7 @@ const ProjectList = () => {
       exit={{ opacity: 0 }} 
     >
       {projects.map((project, index) => (
-        <Box className='animate-me' margin={5} mb={20}>
+        <Box className='animate-me-projects' margin={5} mb={20}>
           
             <ProjectCard {...project}  />
           
