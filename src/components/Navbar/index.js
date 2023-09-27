@@ -55,7 +55,8 @@ function Navbar() {
               ml={5}
               position={"absolute"}
               mt={5}
-              _hover={"none"}
+              _hover={{ bg: "transparent" }} // Tıklama efekti için rengi belirtin
+  _focus={{ outline: "none" }} // Varsayılan tıklama vurgusunu ka
             />
           </div>
         ) : (
