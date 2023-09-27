@@ -78,7 +78,7 @@ function Navbar() {
       pt={20}
       pl={10}
       display={{ base: "grid", md: "none" }}
-      bg="#64CCC5"
+      bg="red"
       color="#94716b"
       listStyleType={"none"}
       fontSize={"4xl"}
