@@ -40,7 +40,7 @@ function Navbar() {
   return (
     <Box className="absolute w-full sm:mt-16 mt-10 z-10 ">
       <Flex
-        className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-500 text-opacity-30"
+        className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-100 text-opacity-30"
       >
         {isMobile ? (
           <div 
