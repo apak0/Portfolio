@@ -69,44 +69,35 @@ function Navbar() {
       </Flex>
 
       {isMobile && isOpen && (
-        <motion.div
-         
-          className={`mobile-menu ${isOpen ? "open" : ""}`}
-          ref={menuRef} // add menü ref
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-           transition={{
-            ease: "linear",
-            
-            
-          }}
-          exit={{ opacity: 1 }}
-          >
-          <Box
-            p="4"
-            pt={20}
-            pl={10}
-            display={{ base: "grid", md: "none" }}
-            bg="#64CCC5"
-            color="#94716b"
-            listStyleType={"none"}
-            fontSize={"4xl"}
-            height={"60vh"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            borderRightRadius={"full"}
-            onClick={(e) => e.stopPropagation()} //When click out of the menu it will be closed
-            className="hamburgerMenuInside"
-            overflow={"hidden"}
-            maxW={"50vh"}
-            
-          >
-            <NavItem to="projects" label="Projects" />
-            <NavItem to="aboutme" label="About Me" />
-            <NavItem to="contact" label="Contact" />
-          </Box>
-        </motion.div>
-      )}
+  <div
+    className={`mobile-menu ${isOpen ? "open" : ""}`}
+    ref={menuRef}
+  >
+    <Box
+      p="4"
+      pt={20}
+      pl={10}
+      display={{ base: "grid", md: "none" }}
+      bg="#64CCC5"
+      color="#94716b"
+      listStyleType={"none"}
+      fontSize={"4xl"}
+      height={"60vh"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      borderRightRadius={"full"}
+      onClick={(e) => e.stopPropagation()}
+      className="hamburgerMenuInside"
+      overflow={"hidden"}
+      maxW={"50vh"}
+    >
+      <NavItem to="projects" label="Projects" />
+      <NavItem to="aboutme" label="About Me" />
+      <NavItem to="contact" label="Contact" />
+    </Box>
+  </div>
+)}
+
     </Box>
   );
 }
