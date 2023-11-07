@@ -50,7 +50,7 @@ const Contact = () => {
         </Heading>
         
         <Flex justifyContent="center" mb="4" color={"teal.200"} bgClip={""}  className='animate-me-top' >
-          <Link e-mail  href="mailto:muhampak25@mail.com" isExternal mx="2" _hover={{color:"aqua"}} >
+          <Link e-mail  href="mailto:muhammedapak@outlook.com" isExternal mx="2" _hover={{color:"aqua"}} >
             <Icon as={FaEnvelope} boxSize="20" />
           </Link>
           <Link href="https://github.com/apak0" isExternal mx="2" textDecoration={"underline"} _hover={{color:"aqua"}}>
