@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   Box,
   Text,
@@ -15,11 +15,10 @@ import {
 import project1 from "../../../assets/images/project-1.png";
 import project2 from "../../../assets/images/project-2.png";
 import project3 from "../../../assets/images/project-3.png";
+import project4 from "../../../assets/images/project-4.png";
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
 import "./style.css";
-
-
 
 const ProjectCard = ({
   imageSrc,
@@ -29,24 +28,22 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <Box display={"flex"} alignItems={"center"} m={10}
-    >
-   
+    <Box display={"flex"}  alignItems={"center"}  >
       <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
-        <LinkBox as="article" rounded="md">
-          <LinkOverlay href={hrefLink} target="_blank">
-          <Atropos shadow={false} className="my-atropos">
-            <Image
-              src={imageSrc}
-              alt={title}
-              loading="lazy"
-              width="100%"
-              height="200px"
-              objectFit="cover"
-            />
-            </Atropos>
-          </LinkOverlay>
+          <LinkBox as="article" rounded="md">
+            <LinkOverlay href={hrefLink} target="_blank">
+              <Atropos shadow={false} className="my-atropos">
+                <Image
+                  src={imageSrc}
+                  alt={title}
+                  loading="lazy"
+                  width="100%"
+                  height="200px"
+                  objectFit="cover"
+                />
+              </Atropos>
+            </LinkOverlay>
           </LinkBox>
           <Stack mt="6" spacing="3">
             <Heading
@@ -71,7 +68,6 @@ const ProjectCard = ({
           </Stack>
         </CardBody>
       </Card>
-    
     </Box>
   );
 };
@@ -83,7 +79,7 @@ const ProjectList = () => {
       description:
         "Explore a seamless shopping journey like never before on our Online Marketplace, where you can discover a wide range of products and enjoy hassle-free online shopping.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project3, // Replace with actual image source
+      imageSrc: project3, 
       hrefLink: "https://bizim.onrender.com/",
     },
 
@@ -92,7 +88,7 @@ const ProjectList = () => {
       description:
         "Discover real-time weather updates and stay informed about current conditions with the Weather Insight App.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project2, // Replace with actual image source
+      imageSrc: project2, 
       hrefLink: "https://apakweatherapp.netlify.app/",
     },
     {
@@ -100,40 +96,53 @@ const ProjectList = () => {
       description:
         "Experience the excitement as you uncover the elusive blue box among a set of mystery boxes in this engaging web-based puzzle game.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project1, // Replace with actual image source
+      imageSrc: project1, 
       hrefLink: "https://sahane-pazar-box-game.web.app/",
+    },
+    {
+      title: "Two Tea",
+      description:
+        "Streamline your office beverage orders with our easy-to-use application for coffee and tea requests.",
+      technologies: [
+        "React",
+        "Chakra UI",
+        "Tailwind CSS",
+        "Express",
+        "MongoDB",
+      ],
+      imageSrc: project4,
+      hrefLink: "https://twotea.onrender.com/",
     },
 
     // Add more projects as needed
   ];
 
   useEffect(() => {
-    const animateElements = document.querySelectorAll('.animate-me-projects');
-    
+    const animateElements = document.querySelectorAll(".animate-me-projects");
+
     const handleScroll = () => {
       animateElements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        
+
         if (elementTop < windowHeight) {
-          element.style.transform = 'translateY(0)'; // Move the object to the left
+          element.style.transform = "translateY(0)"; // Move the object to the left
           element.style.opacity = 1; // Change the opacity to 1
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Only working for component mounting
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    
     <Flex
       flexWrap="wrap"
       justifyContent="center"
@@ -142,18 +151,16 @@ const ProjectList = () => {
       className="md:h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-       transition={{
+      transition={{
         ease: "linear",
         duration: 5,
-        x: { duration: 1 }
-}}
-      exit={{ opacity: 0 }} 
+        x: { duration: 1 },
+      }}
+      exit={{ opacity: 0 }}
     >
       {projects.map((project, index) => (
-        <Box className='animate-me-projects' margin={5} mb={20}>
-          
-            <ProjectCard {...project}  />
-          
+        <Box className="animate-me-projects" margin={5} mb={20}>
+          <ProjectCard {...project} />
         </Box>
       ))}
     </Flex>
