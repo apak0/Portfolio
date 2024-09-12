@@ -118,7 +118,7 @@ function NavItem({ to, label }) {
       <Link
         to={to}
         smooth={true}
-        className="text-gray-50 hover:text-orange-400 transition duration-300 transform hover:scale-125"
+        className="text-gray-50 hover:text-orange-400 transition duration-300 transform hover:scale-125 cursor-pointer select-none"
       >
         {label}
       </Link>

@@ -28,7 +28,7 @@ const ProjectCard = ({
   hrefLink,
 }) => {
   return (
-    <Box display={"flex"}  alignItems={"center"}  >
+    <Box display={"flex"} alignItems={"center"}>
       <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
         <CardBody>
           <LinkBox as="article" rounded="md">
@@ -79,7 +79,7 @@ const ProjectList = () => {
       description:
         "Explore a seamless shopping journey like never before on our Online Marketplace, where you can discover a wide range of products and enjoy hassle-free online shopping.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project3, 
+      imageSrc: project3,
       hrefLink: "https://bizim.onrender.com/",
     },
 
@@ -88,7 +88,7 @@ const ProjectList = () => {
       description:
         "Discover real-time weather updates and stay informed about current conditions with the Weather Insight App.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project2, 
+      imageSrc: project2,
       hrefLink: "https://apakweatherapp.netlify.app/",
     },
     {
@@ -96,7 +96,7 @@ const ProjectList = () => {
       description:
         "Experience the excitement as you uncover the elusive blue box among a set of mystery boxes in this engaging web-based puzzle game.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project1, 
+      imageSrc: project1,
       hrefLink: "https://sahane-pazar-box-game.web.app/",
     },
     {
@@ -147,8 +147,7 @@ const ProjectList = () => {
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
-      bgGradient="linear(to-b, rgba(249, 76, 16, 0.7), teal.500)"
-      className="md:h-full"
+      className="md:h-full projectsComponent"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
