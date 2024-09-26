@@ -51,12 +51,14 @@ const ProjectCard = ({
               borderBottom={"1px"}
               borderColor={"gray.400"}
               mx={"auto"}
+              fontStyle={"italic"}
               pb={5}
+              color={"#DEE5D4"}
             >
               {" "}
               {title}{" "}
             </Heading>
-            <Text>
+            <Text className="text-xl font-bold">
               <LinesEllipsis
                 text={description}
                 maxLine="3"
