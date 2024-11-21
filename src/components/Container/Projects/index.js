@@ -29,10 +29,20 @@ const ProjectCard = ({
 }) => {
   return (
     <Box display={"flex"} alignItems={"center"}>
-      <Card maxW="sm" bg={"rgba(158, 159, 165, 0.5)"}>
-        <CardBody>
-          <LinkBox as="article" rounded="md">
-            <LinkOverlay href={hrefLink} target="_blank">
+      {/* Make the entire Card clickable */}
+      <LinkBox as="article" rounded="md" width="100%">
+        <Card
+          maxW="sm"
+          bg={"rgba(158, 159, 165, 0.5)"}
+          transform="scale(1)" // Default scale
+          transition="transform 0.3s ease-in-out" // Smooth transition for both hover in and out
+          _hover={{
+            transform: "scale(1.1)", // Scales the card when hovered
+            transition: "transform 0.3s ease-in-out", // Adds smooth transition effect
+          }}
+        >
+          <CardBody>
+            <LinkOverlay href={hrefLink} target="_blank"> {/* Link applied to the whole card */}
               <Atropos shadow={false} className="my-atropos">
                 <Image
                   src={imageSrc}
@@ -43,33 +53,32 @@ const ProjectCard = ({
                   objectFit="cover"
                 />
               </Atropos>
+              <Stack mt="6" spacing="3">
+                <Heading
+                  size="md"
+                  borderBottom={"1px"}
+                  borderColor={"gray.400"}
+                  mx={"auto"}
+                  fontStyle={"italic"}
+                  pb={5}
+                  color={"#DEE5D4"}
+                >
+                  {title}
+                </Heading>
+                <Text className="text-xl font-bold">
+                  <LinesEllipsis
+                    text={description}
+                    maxLine="3"
+                    ellipsis="..."
+                    trimRight
+                    basedOn="letters"
+                  />
+                </Text>
+              </Stack>
             </LinkOverlay>
-          </LinkBox>
-          <Stack mt="6" spacing="3">
-            <Heading
-              size="md"
-              borderBottom={"1px"}
-              borderColor={"gray.400"}
-              mx={"auto"}
-              fontStyle={"italic"}
-              pb={5}
-              color={"#DEE5D4"}
-            >
-              {" "}
-              {title}{" "}
-            </Heading>
-            <Text className="text-xl font-bold">
-              <LinesEllipsis
-                text={description}
-                maxLine="3"
-                ellipsis="..."
-                trimRight
-                basedOn="letters"
-              />
-            </Text>
-          </Stack>
-        </CardBody>
-      </Card>
+          </CardBody>
+        </Card>
+      </LinkBox>
     </Box>
   );
 };
