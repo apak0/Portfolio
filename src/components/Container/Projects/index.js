@@ -16,6 +16,10 @@ import project1 from "../../../assets/images/project-1.png";
 import project2 from "../../../assets/images/project-2.png";
 import project3 from "../../../assets/images/project-3.png";
 import project4 from "../../../assets/images/project-4.png";
+import project5 from "../../../assets/images/project-5.png";
+import project6 from "../../../assets/images/project-6.png";
+import project7 from "../../../assets/images/project-7.png";
+import project8 from "../../../assets/images/project-8.png";
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
 import "./style.css";
@@ -42,7 +46,9 @@ const ProjectCard = ({
           }}
         >
           <CardBody>
-            <LinkOverlay href={hrefLink} target="_blank"> {/* Link applied to the whole card */}
+            <LinkOverlay href={hrefLink} target="_blank">
+              {" "}
+              {/* Link applied to the whole card */}
               <Atropos shadow={false} className="my-atropos">
                 <Image
                   src={imageSrc}
@@ -123,6 +129,40 @@ const ProjectList = () => {
       ],
       imageSrc: project4,
       hrefLink: "https://twotea.onrender.com/",
+    },
+    {
+      title: "SahanePazar Color Game V2",
+      description:
+        "A fast-paced color memory game where players must find the correct colored box under pressure. Test your reflexes and visual memory in this fun and addictive challenge!.",
+      technologies: ["React", "Chakra UI", "Tailwind CSS"],
+      imageSrc: project5,
+      hrefLink: "https://sahane-pazar-box-game-v2.netlify.app/",
+    },
+
+    // asdasd ada
+    {
+      title: "Puzzle Strike",
+      description:
+        "Stylish logic-based puzzle game where you match shapes and colors to unlock new levels. Easy to play, hard to master — a true test of your strategic thinking.",
+      technologies: ["React", "Chakra UI", "Tailwind CSS"],
+      imageSrc: project6,
+      hrefLink: "https://puzzlestrike.netlify.app/",
+    },
+    {
+      title: "Delicious Bite",
+      description:
+        "An elegant restaurant e-commerce web app where users can browse menus, place orders, and discover new meals. Built for a smooth and modern food ordering experience",
+      technologies: ["React", "Chakra UI", "Tailwind CSS, Supabase"],
+      imageSrc: project7,
+      hrefLink: "https://delicious-bite-restaurant.netlify.app/",
+    },
+    {
+      title: "Kingdom of Harpoon",
+      description:
+        "A fantasy-themed chess game with immersive visuals and strategic chess game. Rule the board with tactical moves in a kingdom where every piece has its purpose.",
+      technologies: ["React", "Chakra UI", "Tailwind CSS, Socket.io, Supabase"],
+      imageSrc: project8,
+      hrefLink: "https://kingdom-of-harpoon.netlify.app/",
     },
 
     // Add more projects as needed
