@@ -7,10 +7,12 @@ import {
   CardBody,
   Stack,
   Heading,
-  Flex,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import project1 from "../../../assets/images/project-1.png";
 import project2 from "../../../assets/images/project-2.png";
@@ -192,28 +194,59 @@ const ProjectList = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
-    <Flex
-      flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
-      className="md:h-full projectsComponent"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        ease: "linear",
-        duration: 5,
-        x: { duration: 1 },
-      }}
-      exit={{ opacity: 0 }}
+    <Box
+      as="section"
+      className="md:h-full projectsComponent animate-me-projects"
+      py={20}
+      px={4}
     >
-      {projects.map((project, index) => (
-        <Box className="animate-me-projects" margin={5} mb={20}>
-          <ProjectCard {...project} />
-        </Box>
-      ))}
-    </Flex>
+      <Box maxW="7xl" mx="auto">
+        <Heading
+          as="h2"
+          size="2xl"
+          mb={10}
+          textAlign="center"
+          className="text-4xl font-bold"
+          color={"#DEE5D4"}
+        >
+          Projects
+        </Heading>
+        <Slider {...settings}>
+          {projects.map((project, index) => (
+            <div className=" my-5" key={index}>
+              <ProjectCard {...project} />
+            </div>
+          ))}
+        </Slider>
+      </Box>
+    </Box>
   );
 };
 
