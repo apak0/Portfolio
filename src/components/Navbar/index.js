@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
-import {  Box, Flex, IconButton } from "@chakra-ui/react";
+import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
@@ -39,12 +39,9 @@ function Navbar() {
 
   return (
     <Box className="absolute w-full sm:mt-16 mt-10 z-10 ">
-      <Flex
-        className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-100 text-opacity-30"
-      >
+      <Flex className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-100 text-opacity-30">
         {isMobile ? (
-          <div 
-          ref={menuRef}>
+          <div ref={menuRef}>
             <IconButton
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
               onClick={() => setIsOpen(!isOpen)}
@@ -56,7 +53,7 @@ function Navbar() {
               position={"absolute"}
               mt={5}
               _hover={{ bg: "transparent" }} // Tıklama efekti için rengi belirtin
-  _focus={{ outline: "none" }} // Varsayılan tıklama vurgusunu ka
+              _focus={{ outline: "none" }} // Varsayılan tıklama vurgusunu ka
             />
           </div>
         ) : (
@@ -69,52 +66,49 @@ function Navbar() {
       </Flex>
 
       {isMobile && isOpen && (
-  <div
-    className={`mobile-menu ${isOpen ? "open" : ""}`}
-    ref={menuRef}
-  >
-    <Box
-      p="4"
-      pt={20}
-      pl={10}
-      display={{ base: "grid", md: "none" }}
-    bg="#64CCC5"
-      color="#94716b"
-      listStyleType={"none"}
-      fontSize={"4xl"}
-      height={"60vh"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      borderRightRadius={"full"}
-      onClick={(e) => e.stopPropagation()}
-      className="hamburgerMenuInside"
-      overflow={"hidden"}
-      maxW={"50vh"}
-    >
-      <NavItem to="projects" label="Projects" />
-      <NavItem to="aboutme" label="About Me" />
-      <NavItem to="contact" label="Contact" />
-    </Box>
-  </div>
-)}
-
+        <div className={`mobile-menu ${isOpen ? "open" : ""}`} ref={menuRef}>
+          <Box
+            p="4"
+            pt={20}
+            pl={10}
+            display={{ base: "grid", md: "none" }}
+            bg="#64CCC5"
+            color="#94716b"
+            listStyleType={"none"}
+            fontSize={"4xl"}
+            height={"60vh"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            borderRightRadius={"full"}
+            onClick={(e) => e.stopPropagation()}
+            className="hamburgerMenuInside"
+            overflow={"hidden"}
+            maxW={"50vh"}
+          >
+            <NavItem to="projects" label="Projects" />
+            <NavItem to="aboutme" label="About Me" />
+            <NavItem to="contact" label="Contact" />
+          </Box>
+        </div>
+      )}
     </Box>
   );
 }
 
 function NavItem({ to, label }) {
   return (
-    <motion.Box as="ul" className="mx-0 md:mx-4 mb-10" 
+    <motion.Box
+      as="ul"
+      className="mx-0 md:mx-4 mb-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-       transition={{
+      transition={{
         ease: "linear",
         duration: 1,
-        x: { duration: 1 }
+        x: { duration: 1 },
       }}
       exit={{ opacity: 1 }}
-      
-      >
+    >
       <Link
         to={to}
         smooth={true}
