@@ -223,24 +223,24 @@ const ProjectList = () => {
   return (
     <Box
       as="section"
-      className="md:h-full projectsComponent animate-me-projects"
+      className="md:h-full projectsComponent"
       py={20}
       px={4}
     >
-      <Box maxW="7xl" mx="auto">
+      <Box maxW="7xl" mx="auto ">
         <Heading
           as="h2"
           size="2xl"
           mb={10}
           textAlign="center"
-          className="text-4xl font-bold"
+          className="text-4xl font-bold "
           color={"#DEE5D4"}
         >
           Projects
         </Heading>
         <Slider {...settings}>
           {projects.map((project, index) => (
-            <div className=" my-5" key={index}>
+            <div className="  animate-me-projects my-5" key={index}>
               <ProjectCard {...project} />
             </div>
           ))}
