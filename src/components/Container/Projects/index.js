@@ -227,24 +227,28 @@ const ProjectList = () => {
       py={20}
       px={4}
     >
-      <Box maxW="7xl" mx="auto ">
+      <Box maxW="7xl" mx="auto">
         <Heading
           as="h2"
           size="2xl"
           mb={10}
           textAlign="center"
-          className="text-4xl font-bold "
+          className="text-4xl font-bold"
           color={"#DEE5D4"}
         >
           Projects
         </Heading>
-        <Slider {...settings}>
-          {projects.map((project, index) => (
-            <div className="  animate-me-projects my-5" key={index}>
-              <ProjectCard {...project} />
-            </div>
-          ))}
-        </Slider>
+        <Box px={10} py={10}>  {/* Added padding around the slider */}
+          <Slider {...settings}>
+            {projects.map((project, index) => (
+              <div className="animate-me-projects my-5" key={index}>
+                <Box px={10}>  {/* Added horizontal padding for each card */}
+                  <ProjectCard {...project} />
+                </Box>
+              </div>
+            ))}
+          </Slider>
+        </Box>
       </Box>
     </Box>
   );
