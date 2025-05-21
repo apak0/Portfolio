@@ -22,6 +22,7 @@ import project5 from "../../../assets/images/project-5.png";
 import project6 from "../../../assets/images/project-6.png";
 import project7 from "../../../assets/images/project-7.png";
 import project8 from "../../../assets/images/project-8.png";
+import project9 from "../../../assets/images/project-9.png";
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
 import "./style.css";
@@ -165,6 +166,14 @@ const ProjectList = () => {
       technologies: ["React", "Chakra UI", "Tailwind CSS, Socket.io, Supabase"],
       imageSrc: project8,
       hrefLink: "https://kingdom-of-harpoon.netlify.app/",
+    },
+    {
+      title: "Logistic Pro",
+      description:
+        "An intelligent logistics management app designed to streamline shipping, tracking, and delivery processes. Perfect for businesses seeking efficiency, real-time updates, and full control over their logistics operations.",
+      technologies: ["React", "Tailwind CSS", "Framer motion", "Chakra UI"],
+      imageSrc: project9,
+      hrefLink: "https://logistic-pro.netlify.app/",
     },
 
     // Add more projects as needed
