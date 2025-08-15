@@ -23,6 +23,8 @@ import project6 from "../../../assets/images/project-6.png";
 import project7 from "../../../assets/images/project-7.png";
 import project8 from "../../../assets/images/project-8.png";
 import project9 from "../../../assets/images/project-9.png";
+import project10 from "../../../assets/images/project-10.png";
+
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
 import "./style.css";
@@ -94,6 +96,14 @@ const ProjectCard = ({
 
 const ProjectList = () => {
   const projects = [
+    {
+      title: "Mythic Realms",
+      description:
+        "This website is designed as an immersive hub for an online MMORPG game, featuring player profiles, rankings, and interactive community sections. It delivers a modern, responsive interface to enhance engagement and provide a seamless gaming experience",
+      technologies: ["React", "Redux Toolkit", "Tailwind CSS"],
+      imageSrc: project10,
+      hrefLink: "https://mythic-realms.netlify.app//",
+    },
     {
       title: "E-Commerce App",
       description:
