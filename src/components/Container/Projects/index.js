@@ -101,7 +101,7 @@ const ProjectList = () => {
       description:
         "This website is designed as an immersive hub for an online MMORPG game, featuring player profiles, rankings, and interactive community sections. It delivers a modern, responsive interface to enhance engagement and provide a seamless gaming experience",
       technologies: ["React", "Redux Toolkit", "Tailwind CSS"],
-      imageSrc: project10,
+      imageSrc: project1,
       hrefLink: "https://mythic-realms.netlify.app//",
     },
     {
@@ -126,7 +126,7 @@ const ProjectList = () => {
       description:
         "Experience the excitement as you uncover the elusive blue box among a set of mystery boxes in this engaging web-based puzzle game.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
-      imageSrc: project1,
+      imageSrc: project10,
       hrefLink: "https://sahane-pazar-box-game.web.app/",
     },
     {
@@ -240,12 +240,7 @@ const ProjectList = () => {
   };
 
   return (
-    <Box
-      as="section"
-      className="md:h-full projectsComponent"
-      py={20}
-      px={4}
-    >
+    <Box as="section" className="md:h-full projectsComponent" py={20} px={4}>
       <Box maxW="7xl" mx="auto">
         <Heading
           as="h2"
@@ -257,11 +252,15 @@ const ProjectList = () => {
         >
           Projects
         </Heading>
-        <Box px={10} py={10}>  {/* Added padding around the slider */}
+        <Box px={10} py={10}>
+          {" "}
+          {/* Added padding around the slider */}
           <Slider {...settings}>
             {projects.map((project, index) => (
               <div className="animate-me-projects my-5" key={index}>
-                <Box px={10}>  {/* Added horizontal padding for each card */}
+                <Box px={10}>
+                  {" "}
+                  {/* Added horizontal padding for each card */}
                   <ProjectCard {...project} />
                 </Box>
               </div>
