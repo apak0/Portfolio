@@ -6,20 +6,25 @@ import AboutMe from "./components/Container/AboutMe";
 import Projects from "./components/Container/Projects";
 import Contact from "./components/Container/Contact";
 import { Element } from "react-scroll";
-import LegendaryCursor from "legendary-cursor";
-window.addEventListener("load", () => {
-  LegendaryCursor.init({
-    lineSize: 0.05 ,
-    opacityDecrement: 0.55,
-    speedExpFactor: 0.9,
-    lineExpFactor: 0.6,
-    sparklesCount: 10,
-    maxOpacity: 0.99,
-  });
-});
+// import LegendaryCursor from "legendary-cursor";
+import SplashCursor from './SplashCursor'
+
+
+// window.addEventListener("load", () => {
+//   LegendaryCursor.init({
+//     lineSize: 0.05 ,
+//     opacityDecrement: 0.55,
+//     speedExpFactor: 0.9,
+//     lineExpFactor: 0.6,
+//     sparklesCount: 10,
+//     maxOpacity: 0.99,
+//   });
+// });
 function App() {
+  
   return (
     <div>
+      <SplashCursor />
       <Navbar />
       <Element name="homepage">
         <HomePage />
