@@ -114,12 +114,12 @@ const ProjectList = () => {
     },
 
     {
-      title: "Weather App",
+      title: "Homefy",
       description:
-        "Discover real-time weather updates and stay informed about current conditions with the Weather Insight App.",
+        "Find and book unique rental homes with ease through the Homefy Booking Platform.",
       technologies: ["React", "Chakra UI", "Tailwind CSS"],
       imageSrc: project2,
-      hrefLink: "https://apakweatherapp.netlify.app/",
+      hrefLink: "https://homefy.netlify.app/",
     },
     {
       title: "SahanePazar Color Game",
