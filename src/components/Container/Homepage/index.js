@@ -45,7 +45,7 @@ function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            <Text className="text-6xl text-white text-opacity-90 mb-4">
+            <Text className="text-6xl text-white text-opacity-90 mb-4 select-none">
               Hello, I'm
             </Text>
           </motion.div>
@@ -57,7 +57,7 @@ function HomePage() {
           >
             <Text
               id="name-surname"
-              className="text-7xl font-extrabold text-white tracking-widest mb-8"
+              className="text-7xl font-extrabold text-white tracking-widest mb-8 select-none"
               style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
             >
               Muhammed Apak
@@ -69,7 +69,7 @@ function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6, duration: 1 }}
           >
-            <Text className="text-xl text-white text-opacity-90 tracking-widest">
+            <Text className="text-xl text-white text-opacity-90 tracking-widest select-none">
               AND THIS IS <Cover>MY RESUME</Cover>
             </Text>
           </motion.div>
