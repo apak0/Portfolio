@@ -7,8 +7,8 @@ import Projects from "./components/Container/Projects";
 import Contact from "./components/Container/Contact";
 import { Element } from "react-scroll";
 // import LegendaryCursor from "legendary-cursor";
-import SplashCursor from './SplashCursor'
-
+import SplashCursor from "./SplashCursor";
+import GradualBlur from "./GradualBlur";
 
 // window.addEventListener("load", () => {
 //   LegendaryCursor.init({
@@ -21,24 +21,35 @@ import SplashCursor from './SplashCursor'
 //   });
 // });
 function App() {
-  
   return (
-    <div>
-      <SplashCursor />
-      <Navbar />
-      <Element name="homepage">
-        <HomePage />
-      </Element>
-      <Element name="projects">
-        <Projects />
-      </Element>
-      <Element name="aboutme">
-        <AboutMe />
-      </Element>
-      <Element name="contact">
-        <Contact />
-      </Element>
-    </div>
+    <section style={{ position: "relative", overflow: "hidden" }}>
+      <div>
+        <SplashCursor />
+        <Navbar />
+        <Element name="homepage">
+          <HomePage />
+        </Element>
+        <Element name="projects">
+          <Projects />
+        </Element>
+        <Element name="aboutme">
+          <AboutMe />
+        </Element>
+        <Element name="contact">
+          <Contact />
+        </Element>
+      </div>
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={1}
+      />
+    </section>
   );
 }
 
