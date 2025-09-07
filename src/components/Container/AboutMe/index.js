@@ -51,7 +51,7 @@ const AboutMe = () => {
           Hi there! I'm Muhammed Apak, a{" "}
           <RotatingText
             texts={["passionate", "proactive", "collaborative"]}
-            mainClassName="bg-[#5227ff] text-white px-2 sm:px-2 md:px-3 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg ml-2 font-bold inline-block min-w-[130px] text-center"
+            mainClassName="bg-[#5227ff] text-white px-2 sm:px-2 md:px-3 overflow-hidden  justify-center rounded-lg ml-2 font-bold inline-block min-w-[150px] text-center"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
             animate={{ y: 0 }}

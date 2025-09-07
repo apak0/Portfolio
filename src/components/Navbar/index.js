@@ -4,6 +4,8 @@ import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
+import DecryptedText from "./DecryptedText";
+import TrueFocus from "./TrueFocus";
 import "./style.css";
 
 function Navbar() {
@@ -52,15 +54,48 @@ function Navbar() {
               ml={5}
               position={"absolute"}
               mt={5}
-              _hover={{ bg: "transparent" }} // Tıklama efekti için rengi belirtin
-              _focus={{ outline: "none" }} // Varsayılan tıklama vurgusunu ka
+              _hover={{ bg: "transparent" }}
+              _focus={{ outline: "none" }}
             />
           </div>
         ) : (
-          <Flex align="center" as="ul" listStyleType="none">
-            <NavItem to="projects" label="Projects" />
-            <NavItem to="aboutme" label="About Me" />
-            <NavItem to="contact" label="Contact" />
+          <Flex align="center" as="ul" listStyleType="none" gap={6}>
+            <NavItem
+              to="projects"
+              label={
+                <DecryptedText
+                  text="Projects"
+                  animateOn="view"
+                  revealDirection="center"
+                  speed={90}
+                />
+              }
+            />
+
+            <NavItem
+              to="aboutme"
+              label={
+                <DecryptedText
+                  text="About Me"
+                  animateOn="view"
+                  revealDirection="center"
+                  speed={90}
+                />
+              }
+            />
+
+            <NavItem
+              to="contact"
+              label={
+                <DecryptedText
+                  text="Contact"
+                  animateOn="view"
+                  revealDirection="center"
+                  speed={90}
+                  Sequential={true}
+                />
+              }
+            />
           </Flex>
         )}
       </Flex>
