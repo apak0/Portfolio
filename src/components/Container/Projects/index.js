@@ -24,6 +24,7 @@ import project7 from "../../../assets/images/project-7.png";
 import project8 from "../../../assets/images/project-8.png";
 import project9 from "../../../assets/images/project-9.png";
 import project10 from "../../../assets/images/project-10.png";
+import project11 from "../../../assets/images/project-11.png";
 
 import LinesEllipsis from "react-lines-ellipsis";
 import Atropos from "atropos/react";
@@ -190,7 +191,7 @@ const ProjectList = () => {
       description:
         "Galactico Blitz is a fast-paced space shooter where you pilot a futuristic starship, dodge cosmic dangers, and blast through endless waves of enemies.",
       technologies: ["React", "Tailwind CSS", "Framer motion","Reactbits", "Chakra UI"],
-      imageSrc: project10,
+      imageSrc: project11,
       hrefLink: "https://galactico-blitz.netlify.app/",
     },
 
