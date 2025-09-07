@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import DecryptedText from "./DecryptedText";
-import TrueFocus from "./TrueFocus";
+
 import "./style.css";
 
 function Navbar() {
