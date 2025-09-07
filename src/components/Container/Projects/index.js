@@ -185,6 +185,14 @@ const ProjectList = () => {
       imageSrc: project9,
       hrefLink: "https://logistic-pro.netlify.app/",
     },
+     {
+      title: "Galactico Blitz",
+      description:
+        "Galactico Blitz is a fast-paced space shooter where you pilot a futuristic starship, dodge cosmic dangers, and blast through endless waves of enemies.",
+      technologies: ["React", "Tailwind CSS", "Framer motion","Reactbits", "Chakra UI"],
+      imageSrc: project10,
+      hrefLink: "https://galactico-blitz.netlify.app/",
+    },
 
     // Add more projects as needed
   ];
