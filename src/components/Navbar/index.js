@@ -40,7 +40,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <Box className="absolute w-full sm:mt-16 mt-10 z-20 ">
+    <Box className="absolute w-full sm:mt-16 mt-10 z-30 ">
       <Flex className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-100 text-opacity-30">
         {isMobile ? (
           <div ref={menuRef}>
@@ -107,8 +107,8 @@ function Navbar() {
             pt={20}
             pl={10}
             display={{ base: "grid", md: "none" }}
-            bg="#64CCC5"
-            color="#94716b"
+            bg="#F2F2F2"
+            color="#FF714B"
             listStyleType={"none"}
             fontSize={"4xl"}
             height={"60vh"}
@@ -147,7 +147,7 @@ function NavItem({ to, label }) {
       <Link
         to={to}
         smooth={true}
-        className="text-gray-50 hover:text-orange-400 transition duration-300 transform hover:scale-125 cursor-pointer select-none"
+        className="text-{#FF714B} hover:text-orange-400 transition duration-300 transform hover:scale-125 cursor-pointer select-none"
       >
         {label}
       </Link>
