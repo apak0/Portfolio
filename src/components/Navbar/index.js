@@ -41,7 +41,7 @@ function Navbar() {
 
   return (
     <Box className="absolute w-full sm:mt-16 mt-10 z-30 ">
-      <Flex className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-100 text-opacity-30">
+      <Flex className="sm:justify-center justify-between bg-transparent text-3xl font-bold text-cyan-400 ">
         {isMobile ? (
           <div ref={menuRef}>
             <IconButton
