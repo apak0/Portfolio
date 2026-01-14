@@ -122,7 +122,7 @@ function Navbar() {
           >
             <NavItem to="projects" label="Projects" />
             <NavItem to="aboutme" label="About Me" />
-            <NavItem to="contact" label="Contact" />
+            
           </Box>
         </div>
       )}
